@@ -11,6 +11,7 @@ namespace Csharp_Code_First_Education
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BreakAwayContext>());
             InsirtIntoDestination();
             InsertTrip();
+            ////InsertPerson();
             DisplyDestination();
         }
         private static void InsirtIntoDestination()
@@ -63,7 +64,20 @@ namespace Csharp_Code_First_Education
                 context.SaveChanges();
             }
         }
-
+        private static void InsertPerson()
+        {
+            var person = new Person
+            {
+                FirstName = "Rowan",
+                LastName = "Miller",
+                SocialSecurityNumber = 123999999
+            };
+            using (var context = new BreakAwayContext())
+            {
+                context.People.Add(person);
+                context.SaveChanges();
+            }
+        }
 
 
 
