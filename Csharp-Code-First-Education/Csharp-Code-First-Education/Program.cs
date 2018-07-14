@@ -12,10 +12,10 @@ namespace Csharp_Code_First_Education
            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BreakAwayContext>());
             //InsirtIntoDestination();
             //InsertTrip();
-            //InsertPerson();
+            InsertPerson();
             //UpdatePerson();
             //UpdateTrip();
-            DisplyDestination();
+            //DisplyDestination();
         }
         private static void InsirtIntoDestination()
         {
