@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Csharp_Code_First_Education
 {
-    [ComplexType]
+
     class Address
     {
         public int AddressId { get; set; }

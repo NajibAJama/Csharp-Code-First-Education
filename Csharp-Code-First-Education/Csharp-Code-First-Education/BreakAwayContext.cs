@@ -16,6 +16,8 @@ namespace Csharp_Code_First_Education
             modelBuilder.Configurations.Add(new LodginConfiguration());
             modelBuilder.Configurations.Add(new TripConfiguration());
             modelBuilder.Configurations.Add(new PersonConfiguration());
+            //complexType config must come after inline Configurations:
+            modelBuilder.ComplexType<Address>();
         }
     }
 }
