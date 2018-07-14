@@ -8,5 +8,6 @@ namespace Csharp_Code_First_Education
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public decimal CostUSD { get; set; }
+        public byte[] RowVersion { get; set; }
     }
 }

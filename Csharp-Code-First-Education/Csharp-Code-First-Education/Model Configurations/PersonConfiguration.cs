@@ -8,6 +8,7 @@ namespace Csharp_Code_First_Education.Model_Configurations
         {
             HasKey(p => p.SocialSecurityNumber);
             Property(p => p.SocialSecurityNumber).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+            Property(p => p.Rowversion).IsRowVersion();
         }
     }
 }

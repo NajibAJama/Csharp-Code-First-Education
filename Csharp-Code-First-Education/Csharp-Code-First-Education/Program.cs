@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 namespace Csharp_Code_First_Education
 {
@@ -8,11 +9,12 @@ namespace Csharp_Code_First_Education
     {
         static void Main(string[] args)
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BreakAwayContext>());
-            InsirtIntoDestination();
-            InsertTrip();
+            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BreakAwayContext>());
+            //InsirtIntoDestination();
+            //InsertTrip();
             ////InsertPerson();
-            DisplyDestination();
+            UpdateTrip();
+            //DisplyDestination();
         }
         private static void InsirtIntoDestination()
         {
@@ -64,6 +66,7 @@ namespace Csharp_Code_First_Education
                 context.SaveChanges();
             }
         }
+
         private static void InsertPerson()
         {
             var person = new Person
@@ -79,7 +82,16 @@ namespace Csharp_Code_First_Education
             }
         }
 
-
+        private static void UpdateTrip()
+        {
+            using (var context = new BreakAwayContext())
+            {
+                var trip = context.Trips.FirstOrDefault();
+                trip.CostUSD = 660;
+                context.SaveChanges();
+            }
+            Console.WriteLine("trip updated");
+        }
 
     }
 }

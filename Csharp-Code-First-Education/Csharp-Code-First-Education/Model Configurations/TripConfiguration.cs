@@ -9,7 +9,7 @@ namespace Csharp_Code_First_Education.Model_Configurations
         {
             HasKey(t => t.Identifier);
             Property(t => t.Identifier).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-
+            Property(t => t.RowVersion).IsRowVersion();
         }
     }
 }
