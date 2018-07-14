@@ -18,6 +18,8 @@ namespace Csharp_Code_First_Education
             modelBuilder.Configurations.Add(new PersonConfiguration());
             //complexType config must come after inline Configurations:
             modelBuilder.ComplexType<Address>();
+            //complex type configuration for personalinfo class:
+            modelBuilder.ComplexType<PersonalInfo>();
         }
     }
 }
