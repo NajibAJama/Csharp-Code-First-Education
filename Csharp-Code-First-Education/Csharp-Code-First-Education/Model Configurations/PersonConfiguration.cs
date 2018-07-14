@@ -6,9 +6,10 @@ namespace Csharp_Code_First_Education.Model_Configurations
     {
         public PersonConfiguration()
         {
-            HasKey(p => p.SocialSecurityNumber);
-            Property(p => p.SocialSecurityNumber).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
-            Property(p => p.Rowversion).IsRowVersion();
+            //HasKey(p => p.SocialSecurityNumber);
+            //Property(p => p.SocialSecurityNumber).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+            Property(p => p.RowVersion).IsRowVersion();
+            Property(p => p.SocialSecurityNumber).IsConcurrencyToken();
         }
     }
 }

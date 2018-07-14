@@ -7,5 +7,6 @@
         public string Owner { get; set; }
         public bool IsResort { get; set; }
         public Destination DestinationId { get; set; }
+        public decimal MilesFromNearestAirport { get; set; }
     }
 }

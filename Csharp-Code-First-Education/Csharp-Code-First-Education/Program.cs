@@ -12,8 +12,9 @@ namespace Csharp_Code_First_Education
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BreakAwayContext>());
             //InsirtIntoDestination();
             //InsertTrip();
-            ////InsertPerson();
-            UpdateTrip();
+            //InsertPerson();
+            //UpdatePerson();
+            //UpdateTrip();
             //DisplyDestination();
         }
         private static void InsirtIntoDestination()
@@ -87,11 +88,20 @@ namespace Csharp_Code_First_Education
             using (var context = new BreakAwayContext())
             {
                 var trip = context.Trips.FirstOrDefault();
-                trip.CostUSD = 660;
+                trip.CostUSD = 50;
                 context.SaveChanges();
             }
             Console.WriteLine("trip updated");
         }
 
+        private static void UpdatePerson()
+        {
+            using (var context = new BreakAwayContext())
+            {
+                var person = context.People.FirstOrDefault();
+                person.FirstName = "Rowena";
+                context.SaveChanges();
+            }
+        }
     }
 }
