@@ -9,13 +9,13 @@ namespace Csharp_Code_First_Education
     {
         static void Main(string[] args)
         {
-            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BreakAwayContext>());
+           Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BreakAwayContext>());
             //InsirtIntoDestination();
             //InsertTrip();
             //InsertPerson();
             //UpdatePerson();
             //UpdateTrip();
-            //DisplyDestination();
+            DisplyDestination();
         }
         private static void InsirtIntoDestination()
         {
