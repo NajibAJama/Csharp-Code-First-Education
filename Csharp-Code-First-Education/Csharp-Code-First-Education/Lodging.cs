@@ -1,4 +1,6 @@
-﻿namespace Csharp_Code_First_Education
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Csharp_Code_First_Education
 {
     class Lodging
     {
@@ -6,7 +8,9 @@
         public string Name { get; set; }
         public string Owner { get; set; }
         public bool IsResort { get; set; }
-        public Destination DestinationId { get; set; }
+        //[Required]
+        public int DestinationId { get; set; }
+        //public Destination DestinationId { get; set; }
         public decimal MilesFromNearestAirport { get; set; }
     }
 }
