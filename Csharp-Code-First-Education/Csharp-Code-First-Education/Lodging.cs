@@ -13,5 +13,7 @@ namespace Csharp_Code_First_Education
         public decimal MilesFromNearestAirport { get; set; }
         public int DestinationId { get; set; }
         public List<InternetSpecial> InternetSpecials { get; set; }
+        public Person PrimaryContact { get; set; }
+        public Person SecondaryContact { get; set; }
     }
 }
