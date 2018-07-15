@@ -10,5 +10,6 @@ namespace Csharp_Code_First_Education
         public DateTime ToDate { get; set; }
         public int AccommodationId { get; set; }
         public Lodging Accommodation { get; set; }
+
     }
 }

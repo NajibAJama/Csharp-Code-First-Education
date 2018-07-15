@@ -9,15 +9,15 @@ namespace Csharp_Code_First_Education
     {
         static void Main(string[] args)
         {
-           Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BreakAwayContext>());
-            //InsirtIntoDestination();
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BreakAwayContext>());
+            InsirtIntoDestination();
             //InsertTrip();
             ////InsertPerson();
             //UpdatePerson();
             //UpdateTrip();
-            //DisplyDestination();
-            //InsertLodging();
-            //Console.ReadLine();
+            DisplyDestination();
+            InsertLodging();
+            Console.ReadLine();
 
 
         }
@@ -115,18 +115,16 @@ namespace Csharp_Code_First_Education
                 Console.WriteLine("retreved destiation: name = > " + ds.Name + " with id > " + ds.DestinationId);
                 Lodging ld = new Lodging
                 {
-                    Name = "Cow girls Sex den",
-                    Owner = "William shatner",
+                    Name = "bunny ranch",
+                    Owner = "William T smith",
                     IsResort = true,
-                    DestinationId = ds.DestinationId,
+                    Destination = ds,
                     MilesFromNearestAirport = 10
                 };
                 context.Lodgings.Add(ld);
                 context.SaveChanges();
-                Console.WriteLine("added cow girls sex den to lodging");
-              
+                Console.WriteLine("added bunny ranch lodging");
             }
-           
         }
     }
 }

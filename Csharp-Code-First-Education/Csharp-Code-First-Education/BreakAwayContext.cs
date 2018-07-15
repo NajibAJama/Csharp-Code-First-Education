@@ -17,10 +17,16 @@ namespace Csharp_Code_First_Education
             modelBuilder.Configurations.Add(new TripConfiguration());
             modelBuilder.Configurations.Add(new PersonConfiguration());
             modelBuilder.Configurations.Add(new AddressConfiguration());
+            //Specifying Unconventionally Named Foreign Keys
+            modelBuilder.Configurations.Add(new InternetSpecialConfiguration());
+
             //complexType config must come after inline Configurations:
+            //address has a key and model builder should know it's a complextype even if it has a primarykey
             modelBuilder.ComplexType<Address>();
             //complex type configuration for personalinfo class:
             modelBuilder.ComplexType<PersonalInfo>();
+
+
         }
     }
 }
