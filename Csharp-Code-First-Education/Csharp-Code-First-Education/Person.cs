@@ -1,4 +1,6 @@
-﻿namespace Csharp_Code_First_Education
+﻿using System.Collections.Generic;
+
+namespace Csharp_Code_First_Education
 {
     class Person
     {
