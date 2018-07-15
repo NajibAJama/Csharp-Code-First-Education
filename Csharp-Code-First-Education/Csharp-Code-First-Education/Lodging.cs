@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Csharp_Code_First_Education
 {
@@ -12,5 +13,6 @@ namespace Csharp_Code_First_Education
         public int DestinationId { get; set; }
         //public Destination DestinationId { get; set; }
         public decimal MilesFromNearestAirport { get; set; }
+        public List<InternetSpecial> InternetSpecials { get; set; }
     }
 }
