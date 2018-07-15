@@ -10,14 +10,16 @@ namespace Csharp_Code_First_Education
         static void Main(string[] args)
         {
            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BreakAwayContext>());
-            InsirtIntoDestination();
+            //InsirtIntoDestination();
             //InsertTrip();
             ////InsertPerson();
             //UpdatePerson();
             //UpdateTrip();
-            DisplyDestination();
-            InsertLodging();
-            Console.ReadLine();
+            //DisplyDestination();
+            //InsertLodging();
+            //Console.ReadLine();
+
+
         }
         private static void InsirtIntoDestination()
         {

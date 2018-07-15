@@ -52,6 +52,7 @@
     <Compile Include="Address.cs" />
     <Compile Include="BreakAwayContext.cs" />
     <Compile Include="Destination.cs" />
+    <Compile Include="InternetSpecial.cs" />
     <Compile Include="Lodging.cs" />
     <Compile Include="Measurement.cs" />
     <Compile Include="Model Configurations\AddressConfiguration.cs" />
