@@ -15,6 +15,7 @@ namespace Csharp_Code_First_Education.Model_Configurations
             //to each other in inverse bidrectional.
             HasOptional(l => l.PrimaryContact).WithMany(p => p.PrimaryContactFor);
             HasOptional(l => l.SecondaryContact).WithMany(p => p.SecondaryContactFor);
+            //HasRequired(l => l.Destination).WithMany(d => d.Lodgings).WillCascadeOnDelete(false);
         }
     }
 }
