@@ -6,7 +6,8 @@ namespace Csharp_Code_First_Education.Model_Configurations
     {
         public InternetSpecialConfiguration()
         {
-            HasRequired(s => s.Accommodation).WithMany(l => l.InternetSpecials).HasForeignKey(s => s.AccommodationId);
+            HasRequired(s => s.Accommodation).WithMany(l => l.InternetSpecials).HasForeignKey(a => a.AccommodationId);
+
             
         }
     }

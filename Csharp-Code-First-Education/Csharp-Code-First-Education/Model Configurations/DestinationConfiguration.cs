@@ -10,7 +10,8 @@ namespace Csharp_Code_First_Education.Model_Configurations
             Property(d => d.Description).HasMaxLength(400);
             Property(d => d.Country).HasMaxLength(100);
             Property(d => d.Photo).HasColumnType("image");
-            HasMany(d => d.Lodgings).WithRequired(l => l.Destination);
+            //HasMany(d => d.Lodgings).WithRequired(l => l.Destination);
+
         }
     }
 }
