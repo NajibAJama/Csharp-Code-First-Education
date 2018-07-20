@@ -61,6 +61,7 @@
     <Compile Include="Model Configurations\InternetSpecialConfiguration.cs" />
     <Compile Include="Model Configurations\LodginConfiguration.cs" />
     <Compile Include="Model Configurations\PersonConfiguration.cs" />
+    <Compile Include="Model Configurations\PersonPhotoConfiguration.cs" />
     <Compile Include="Model Configurations\TripConfiguration.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonalInfo.cs" />

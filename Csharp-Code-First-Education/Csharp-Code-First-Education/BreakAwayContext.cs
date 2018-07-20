@@ -19,6 +19,8 @@ namespace Csharp_Code_First_Education
             modelBuilder.Configurations.Add(new AddressConfiguration());
             //Specifying Unconventionally Named Foreign Keys
             modelBuilder.Configurations.Add(new InternetSpecialConfiguration());
+            //person photo configuration
+            modelBuilder.Configurations.Add(new PersonPhotoConfiguration());
 
             //complexType config must come after inline Configurations:
             //address has a key and model builder should know it's a complextype even if it has a primarykey
