@@ -14,6 +14,8 @@ namespace Csharp_Code_First_Education.Model_Configurations
             ToTable("Locations", "baga");
             Property(d => d.Name).HasColumnName("LocationName");
             Property(d => d.DestinationId).HasColumnName("LocationID");
+            Ignore(d => d.TodayForecast);
+
 
             //Map(m =>
             //{
