@@ -68,6 +68,7 @@
     <Compile Include="PersonPhoto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservation.cs" />
     <Compile Include="Trip.cs" />
   </ItemGroup>
   <ItemGroup>

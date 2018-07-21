@@ -11,26 +11,26 @@ namespace Csharp_Code_First_Education.Model_Configurations
             Property(d => d.Country).HasMaxLength(100);
             Property(d => d.Photo).HasColumnType("image");
             HasMany(d => d.Lodgings).WithRequired(l => l.Destination);
-            //ToTable("Locations", "baga");
+            ToTable("Locations", "baga");
             Property(d => d.Name).HasColumnName("LocationName");
             Property(d => d.DestinationId).HasColumnName("LocationID");
 
-            Map(m =>
-            {
-                m.Properties(d => new
-                {
-                    d.Name,d.Country,d.Description
-                });
-                m.ToTable("Locations");
-            });
-            Map(m =>
-            {
-                m.Properties(d => new
-                {
-                    d.Photo
-                });
-                m.ToTable("LocationPhotos");
-            });
+            //Map(m =>
+            //{
+            //    m.Properties(d => new
+            //    {
+            //        d.Name,d.Country,d.Description
+            //    });
+            //    m.ToTable("Locations");
+            //});
+            //Map(m =>
+            //{
+            //    m.Properties(d => new
+            //    {
+            //        d.Photo
+            //    });
+            //    m.ToTable("LocationPhotos");
+            //});
         }
     }
 }

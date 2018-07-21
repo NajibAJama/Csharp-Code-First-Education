@@ -13,7 +13,7 @@ namespace Csharp_Code_First_Education.Model_Configurations
             HasKey(p => p.PersonId).ToTable("PersonPhotos", "baga");
             HasRequired(p=> p.PhotoOf).WithRequiredDependent(p=> p.Photo);
             Property(p => p.Photo).HasColumnType("image");
-            ToTable("People");
+            ////ToTable("People");
         }
 
     }
