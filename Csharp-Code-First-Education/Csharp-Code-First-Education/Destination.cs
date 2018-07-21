@@ -11,11 +11,13 @@ namespace Csharp_Code_First_Education
         public byte[] Photo { get; set; }
         public List<Lodging> Lodgings { get; set; }
         private string _todayForecast;
-        public string TodayForecast
-        {
-            get { return _todayForecast; }
-            set { _todayForecast = value; }
-        }
+
+        //Preventing Properties from Being Included in the Model
+        //public string TodayForecast
+        //{
+        //    get { return _todayForecast; }
+        //    set { _todayForecast = value; }
+        //}
 
     }
 }
