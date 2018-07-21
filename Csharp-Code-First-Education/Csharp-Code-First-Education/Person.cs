@@ -27,6 +27,6 @@ namespace Csharp_Code_First_Education
         public List<Lodging> PrimaryContactFor { get; set; }
         public List<Lodging> SecondaryContactFor { get; set; }
         public PersonPhoto Photo { get; set; }
-        public List<Reservation> Reservations { get; set; }
+        //public List<Reservation> Reservations { get; set; }
     }
 }
