@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Csharp_Code_First_Education
 {
+    [Table("People")]
     class Person
     {
         public Person()

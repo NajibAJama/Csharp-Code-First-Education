@@ -80,10 +80,10 @@ namespace Csharp_Code_First_Education
                 FirstName = "Rowan",
                 LastName = "Miller",
                 SocialSecurityNumber = 123999999,
-                //Photo = new PersonPhoto
-                //{
-                //    Photo = new byte[] { 0 }
-                //}
+                Photo = new PersonPhoto
+                {
+                    Photo = new byte[] { 0 }
+                }
             };
             using (var context = new BreakAwayContext())
             {

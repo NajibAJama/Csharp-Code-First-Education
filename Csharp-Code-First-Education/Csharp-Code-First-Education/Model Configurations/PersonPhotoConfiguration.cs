@@ -8,9 +8,10 @@ namespace Csharp_Code_First_Education.Model_Configurations
     {
         public PersonPhotoConfiguration()
         {
-            //HasOptional(p => p.PhotoOf).WithRequired(p => p.Photo);
-            HasRequired(p => p.PhotoOf).WithOptional(p => p.Photo);
-            HasKey(p => p.PersonId).ToTable("PersonPhotos","baga");
+            HasOptional(p => p.PhotoOf).WithRequired(p => p.Photo);
+            //HasRequired(p => p.PhotoOf).WithOptional(p => p.Photo);
+            HasKey(p => p.PersonId)/*.ToTable("PersonPhotos", "baga")*/;
+            HasRequired(p => p.PhotoOf).WithRequiredDependent(p => p.Photo);
             Property(p => p.Photo).HasColumnType("image");
         }
 
