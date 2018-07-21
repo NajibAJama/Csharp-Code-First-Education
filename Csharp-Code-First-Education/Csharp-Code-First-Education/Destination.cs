@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
-
+using System.ComponentModel.DataAnnotations.Schema;
 namespace Csharp_Code_First_Education
 {
+    [Table("Locations",Schema ="baga")]
     class Destination
     {
         public int DestinationId { get; set; }
