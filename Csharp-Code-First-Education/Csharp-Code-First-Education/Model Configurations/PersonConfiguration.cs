@@ -10,6 +10,7 @@ namespace Csharp_Code_First_Education.Model_Configurations
             //Property(p => p.SocialSecurityNumber).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
             Property(p => p.RowVersion).IsRowVersion();
             Property(p => p.SocialSecurityNumber).IsConcurrencyToken();
+            ToTable("People");
         }
     }
 }
