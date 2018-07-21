@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Csharp_Code_First_Education
@@ -16,6 +17,7 @@ namespace Csharp_Code_First_Education
             };
         }
         public int PersonId { get; set; }
+        [ConcurrencyCheck]
         public int SocialSecurityNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
