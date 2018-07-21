@@ -6,7 +6,7 @@ namespace Csharp_Code_First_Education.Model_Configurations
     {
         public ReservationConfiguration()
         {
-
+            
         }
     }
 }

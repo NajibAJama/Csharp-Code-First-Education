@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Csharp_Code_First_Education
 {
-    [NotMapped]
+    //[NotMapped]
     class Reservation
     {
         public int ReservationId { get; set; }

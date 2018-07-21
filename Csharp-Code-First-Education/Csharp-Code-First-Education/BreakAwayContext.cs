@@ -22,13 +22,18 @@ namespace Csharp_Code_First_Education
             //person photo configuration
             modelBuilder.Configurations.Add(new PersonPhotoConfiguration());
 
-            modelBuilder.Configurations.Add(new ReservationConfiguration());
+            //With the Fluent API, you’ll use the Ignore method to prevent types from being pulled
+            //into the model.If you want to ignore a class, you need to do this directly from the
+            //DbModelBuilder, not inside of an EntityTypeConfiguration:
+            modelBuilder.Ignore<Reservation>();
+
+            //modelBuilder.Configurations.Add(new ReservationConfiguration());
             //complexType config must come after inline Configurations:
             //address has a key and model builder should know it's a complextype even if it has a primarykey
             modelBuilder.ComplexType<Address>();
             //complex type configuration for personalinfo class:
             modelBuilder.ComplexType<PersonalInfo>();
-            
+
 
 
         }
