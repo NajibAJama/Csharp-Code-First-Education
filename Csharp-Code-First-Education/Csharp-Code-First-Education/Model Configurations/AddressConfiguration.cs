@@ -9,6 +9,11 @@ ComplexTypeConfiguration<Address>
         public AddressConfiguration()
         {
             Property(a => a.StreetAddress).HasMaxLength(150);
+            Property(a => a.StreetAddress).HasColumnName("StreetAddress");
+            Property(a => a.City).HasColumnName("City");
+            Property(a => a.State).HasColumnName("State");
+            Property(a => a.ZipCode).HasColumnName("ZipCode");
+
         }
     }
 }
