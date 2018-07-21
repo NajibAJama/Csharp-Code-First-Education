@@ -12,7 +12,8 @@ namespace Csharp_Code_First_Education.Model_Configurations
             Property(d => d.Photo).HasColumnType("image");
             HasMany(d => d.Lodgings).WithRequired(l => l.Destination);
             ToTable("Locations", "baga");
-
+            Property(d => d.Name).HasColumnName("LocationName");
+            Property(d => d.DestinationId).HasColumnName("LocationID");
         }
     }
 }
