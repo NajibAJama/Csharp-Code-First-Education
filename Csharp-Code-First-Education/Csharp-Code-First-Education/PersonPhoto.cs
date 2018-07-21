@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Csharp_Code_First_Education
 {
-    [Table("PersonPhotos")]
     class PersonPhoto
     {
         public int PersonId { get; set; }

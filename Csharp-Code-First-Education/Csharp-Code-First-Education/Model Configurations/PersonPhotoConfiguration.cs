@@ -10,7 +10,8 @@ namespace Csharp_Code_First_Education.Model_Configurations
         {
             //HasOptional(p => p.PhotoOf).WithRequired(p => p.Photo);
             HasRequired(p => p.PhotoOf).WithOptional(p => p.Photo);
-            HasKey(p => p.PersonId);
+            HasKey(p => p.PersonId).ToTable("PersonPhotos","baga");
+            
         }
 
     }
