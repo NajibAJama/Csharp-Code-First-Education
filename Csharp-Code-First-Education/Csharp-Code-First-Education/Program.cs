@@ -12,10 +12,10 @@ namespace Csharp_Code_First_Education
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BreakAwayContext>());
             //InsirtIntoDestination();
             //InsertTrip();
-            ////InsertPerson();
+            InsertPerson();
             //UpdatePerson();
             //UpdateTrip();
-            DeleteDestinationInMemoryAndDbCascade();
+            //DeleteDestinationInMemoryAndDbCascade();
             //DisplyDestination();
             //InsertLodging();
             Console.ReadLine();
@@ -79,12 +79,17 @@ namespace Csharp_Code_First_Education
             {
                 FirstName = "Rowan",
                 LastName = "Miller",
-                SocialSecurityNumber = 123999999
+                SocialSecurityNumber = 123999999,
+                //Photo = new PersonPhoto
+                //{
+                //    Photo = new byte[] { 0 }
+                //}
             };
             using (var context = new BreakAwayContext())
             {
                 context.People.Add(person);
                 context.SaveChanges();
+                Console.WriteLine("person added");
             }
         }
 
@@ -103,9 +108,12 @@ namespace Csharp_Code_First_Education
         {
             using (var context = new BreakAwayContext())
             {
-                var person = context.People.FirstOrDefault();
+                var person = context.People.Include("Photo").FirstOrDefault();
                 person.FirstName = "Rowena";
-                context.SaveChanges();
+                if (person.Photo == null)
+                {
+                    person.Photo = new PersonPhoto { Photo = new Byte[] { 0 } };
+                }
             }
         }
         private static void InsertLodging()
