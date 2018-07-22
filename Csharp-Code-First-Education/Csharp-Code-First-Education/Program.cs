@@ -12,12 +12,15 @@ namespace Csharp_Code_First_Education
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BreakAwayContext>());
             //InsirtIntoDestination();
             //InsertTrip();
-            InsertPerson();
-            //UpdatePerson();
+            //InsertPerson();
+            ////UpdatePerson();
             //UpdateTrip();
             //DeleteDestinationInMemoryAndDbCascade();
             //DisplyDestination();
             //InsertLodging();
+
+            InsertResort();
+            InsertLodging();
             Console.ReadLine();
 
 
@@ -116,25 +119,25 @@ namespace Csharp_Code_First_Education
                 }
             }
         }
-        private static void InsertLodging()
-        {
-            using (BreakAwayContext context = new BreakAwayContext())
-            {
-                Destination ds = context.Destinations.FirstOrDefault();
-                Console.WriteLine("retreved destiation: name = > " + ds.Name + " with id > " + ds.DestinationId);
-                Lodging ld = new Lodging
-                {
-                    Name = "bunny ranch",
-                    Owner = "William T smith",
-                    IsResort = true,
-                    Destination = ds,
-                    MilesFromNearestAirport = 10
-                };
-                context.Lodgings.Add(ld);
-                context.SaveChanges();
-                Console.WriteLine("added bunny ranch lodging");
-            }
-        }
+        //private static void InsertLodging()
+        //{
+        //    using (BreakAwayContext context = new BreakAwayContext())
+        //    {
+        //        Destination ds = context.Destinations.FirstOrDefault();
+        //        Console.WriteLine("retreved destiation: name = > " + ds.Name + " with id > " + ds.DestinationId);
+        //        Lodging ld = new Lodging
+        //        {
+        //            Name = "bunny ranch",
+        //            Owner = "William T smith",
+        //            //IsResort = true,
+        //            Destination = ds,
+        //            MilesFromNearestAirport = 10
+        //        };
+        //        context.Lodgings.Add(ld);
+        //        context.SaveChanges();
+        //        Console.WriteLine("added bunny ranch lodging");
+        //    }
+        //}
         private static void DeleteDestinationInMemoryAndDbCascade()
         {
             int destinationId;
@@ -168,6 +171,46 @@ namespace Csharp_Code_First_Education
                 context.SaveChanges();
             }
         }
+
+        private static void InsertLodging()
+        {
+            var lodging = new Lodging
+            {
+                Name = "Rainy Day Motel",
+                Destination = new Destination
+                {
+                    Name = "Seattle, Washington",
+                    Country = "USA"
+                }
+            };
+            using (var context = new BreakAwayContext())
+            {
+                context.Lodgings.Add(lodging);
+                context.SaveChanges();
+            }
+        }
+
+        private static void InsertResort()
+        {
+            var resort = new Resort
+            {
+                Name = "Top Notch Resort and Spa",
+                MilesFromNearestAirport = 30,
+                Activities = "Spa, Hiking, Skiing, Ballooning",
+                Destination = new Destination
+                {
+                    Name = "Stowe, Vermont",
+                    Country = "USA"
+                }
+            };
+            using (var context = new BreakAwayContext())
+            {
+                context.Lodgings.Add(resort);
+                context.SaveChanges();
+            }
+        }
+
+
 
 
     }

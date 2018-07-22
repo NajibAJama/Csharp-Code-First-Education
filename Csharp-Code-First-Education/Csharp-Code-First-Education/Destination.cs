@@ -10,7 +10,7 @@ namespace Csharp_Code_First_Education
         public string Description { get; set; }
         public byte[] Photo { get; set; }
         public List<Lodging> Lodgings { get; set; }
-        private string _todayForecast;
+        //private string _todayForecast;
 
         //Preventing Properties from Being Included in the Model
         //public string TodayForecast
