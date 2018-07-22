@@ -10,7 +10,10 @@ namespace Csharp_Code_First_Education.Model_Configurations
             Property(l => l.Owner).HasMaxLength(200);
             Property(l => l.MilesFromNearestAirport).HasPrecision(8, 1);
 
-
+            Map<Resort>(m =>
+            {
+                m.ToTable("Resorts");
+            });
 
             //used for a class with two navigation references and two inverse 
             //code first gets confused and creats four keys...but we want only two pointing
