@@ -12,7 +12,14 @@ namespace Csharp_Code_First_Education.Model_Configurations
             Property(t => t.RowVersion).IsRowVersion();
             HasMany(t => t.Activities)
                 .WithMany(a => a.Trips)
-                .Map(c => c.ToTable("TripActivities"));
+                .Map(c =>
+                {
+                    c.ToTable("TripActivities");
+                    c.MapLeftKey("TripIdentifier");
+                    c.MapRightKey("ActivityId");
+                });
+
+
         }
     }
 }
