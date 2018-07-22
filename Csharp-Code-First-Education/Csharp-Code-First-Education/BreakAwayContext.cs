@@ -6,6 +6,14 @@ namespace Csharp_Code_First_Education
 {
     class BreakAwayContext : DbContext
     {
+        public BreakAwayContext()
+        {
+
+        }
+        public BreakAwayContext(string databaseName):base(databaseName)
+        {
+
+        }
         public DbSet<Destination> Destinations { get; set; }
         public DbSet<Lodging> Lodgings { get; set; }
         public DbSet<Trip> Trips { get; set; }

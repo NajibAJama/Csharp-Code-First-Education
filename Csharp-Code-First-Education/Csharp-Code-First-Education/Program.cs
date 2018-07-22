@@ -16,11 +16,12 @@ namespace Csharp_Code_First_Education
             ////UpdatePerson();
             //UpdateTrip();
             //DeleteDestinationInMemoryAndDbCascade();
+            SpecifyDatabaseName();
             DisplyDestination();
             //InsertLodging();
             
-            InsertResort();
-            InsertLodging();
+            //InsertResort();
+            //InsertLodging();
             Console.ReadLine();
 
 
@@ -192,7 +193,15 @@ namespace Csharp_Code_First_Education
             }
         }
 
-
+        private static void SpecifyDatabaseName()
+        {
+            using (var context =
+            new BreakAwayContext("BreakAwayStringConstructor"))
+            {
+                context.Destinations.Add(new Destination { Name = "Tasmania" });
+                context.SaveChanges();
+            }
+        }
 
 
     }
