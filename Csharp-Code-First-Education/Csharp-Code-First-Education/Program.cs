@@ -16,9 +16,9 @@ namespace Csharp_Code_First_Education
             ////UpdatePerson();
             //UpdateTrip();
             //DeleteDestinationInMemoryAndDbCascade();
-            //DisplyDestination();
+            DisplyDestination();
             //InsertLodging();
-
+            
             InsertResort();
             InsertLodging();
             Console.ReadLine();
@@ -119,25 +119,7 @@ namespace Csharp_Code_First_Education
                 }
             }
         }
-        //private static void InsertLodging()
-        //{
-        //    using (BreakAwayContext context = new BreakAwayContext())
-        //    {
-        //        Destination ds = context.Destinations.FirstOrDefault();
-        //        Console.WriteLine("retreved destiation: name = > " + ds.Name + " with id > " + ds.DestinationId);
-        //        Lodging ld = new Lodging
-        //        {
-        //            Name = "bunny ranch",
-        //            Owner = "William T smith",
-        //            //IsResort = true,
-        //            Destination = ds,
-        //            MilesFromNearestAirport = 10
-        //        };
-        //        context.Lodgings.Add(ld);
-        //        context.SaveChanges();
-        //        Console.WriteLine("added bunny ranch lodging");
-        //    }
-        //}
+       
         private static void DeleteDestinationInMemoryAndDbCascade()
         {
             int destinationId;
