@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using System.Data.SqlClient;
 
 namespace Csharp_Code_First_Education
 {
@@ -16,8 +17,9 @@ namespace Csharp_Code_First_Education
             ////UpdatePerson();
             //UpdateTrip();
             //DeleteDestinationInMemoryAndDbCascade();
+            ReuseDbConnection();
             SpecifyDatabaseName();
-            DisplyDestination();
+            //DisplyDestination();
             //InsertLodging();
             
             //InsertResort();
@@ -201,8 +203,29 @@ namespace Csharp_Code_First_Education
                 context.Destinations.Add(new Destination { Name = "Tasmania" });
                 context.SaveChanges();
             }
+            Console.WriteLine("database created");
         }
 
-
+        private static void ReuseDbConnection()
+        {
+            var cstr = @"Server=.\SQLEXPRESS;
+Database=BreakAwayDbConnectionConstructor;
+Trusted_Connection=true";
+            using (var connection = new SqlConnection(cstr))
+            {
+                using (var context = new BreakAwayContext(connection))
+                {
+                    context.Destinations.Add(new Destination { Name = "Hawaii" });
+                    context.SaveChanges();
+                }
+                using (var context = new BreakAwayContext(connection))
+                {
+                    foreach (var destination in context.Destinations)
+                    {
+                        Console.WriteLine(destination.Name);
+                    }
+                }
+            }
+        }
     }
 }

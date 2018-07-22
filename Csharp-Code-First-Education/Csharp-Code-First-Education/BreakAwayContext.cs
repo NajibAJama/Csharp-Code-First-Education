@@ -1,5 +1,6 @@
 ﻿
 using Csharp_Code_First_Education.Model_Configurations;
+using System.Data.Common;
 using System.Data.Entity;
 
 namespace Csharp_Code_First_Education
@@ -14,6 +15,10 @@ namespace Csharp_Code_First_Education
         {
 
         }
+        public BreakAwayContext(DbConnection connection):base(connection, contextOwnsConnection: false)
+        { }
+
+
         public DbSet<Destination> Destinations { get; set; }
         public DbSet<Lodging> Lodgings { get; set; }
         public DbSet<Trip> Trips { get; set; }
