@@ -10,6 +10,9 @@ namespace Csharp_Code_First_Education.Model_Configurations
             HasKey(t => t.Identifier);
             Property(t => t.Identifier).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(t => t.RowVersion).IsRowVersion();
+            HasMany(t => t.Activities)
+                .WithMany(a => a.Trips)
+                .Map(c => c.ToTable("TripActivities"));
         }
     }
 }
